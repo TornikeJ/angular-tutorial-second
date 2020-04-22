@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-12">
+        <app-shopping-edit></app-shopping-edit>
+        <hr>
+        <ul class="list-group">
+            <a [routerLink]="[]" [queryParams]="{ edit: i}" class="list-group-item"
+                [ngClass]="{'active':activeLinkId === i && activeLinkId !== null }" style="cursor:pointer"
+                *ngFor="let ingredient of (ingredients | async).ingredients; let i = index" (click)="onEditItem(i)">
+                {{ingredient.name}} ({{ingredient.amount}})
+            </a>
+        </ul>
+    </div>
+</div>
